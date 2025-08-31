@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capstone Project · Bracha Stein</title>
+  <meta name="description" content="Predicting Customer Response to Gold Membership Offers" />
+  <style>
+    :root {
+      --bg: #0f172a;          /* slate-900 */
+      --card: #111827;        /* gray-900 */
+      --muted: #94a3b8;       /* slate-400 */
+      --text: #e5e7eb;        /* gray-200 */
+      --accent: #22d3ee;      /* cyan-400 */
+      --accent-2: #a78bfa;    /* violet-400 */
+      --border: #1f2937;      /* gray-800 */
+      --chip: #0ea5e9;        /* sky-500 */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, #0b1220, var(--bg));
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    header {
+      display: grid;
+      gap: 12px;
+      margin: 40px 0 28px;
+    }
+    .title { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -0.02em; }
+    .subtitle { font-size: clamp(16px, 2.5vw, 22px); color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip { background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.25); color: #cffafe; padding: 6px 10px; border-radius: 999px; font-size: 13px; }
+
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); }
+    .card {
+      grid-column: span 12;
+      background: radial-gradient(1200px 300px at 20% -20%, rgba(167,139,250,0.15), transparent),
+                  radial-gradient(1200px 300px at 120% 120%, rgba(34,211,238,0.08), transparent),
+                  var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+    @media (min-width: 880px) {
+      .card.half { grid-column: span 6; }
+    }
+
+    h2 { font-size: 22px; margin: 0 0 10px; }
+    p { margin: 10px 0; }
+
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(90deg, rgba(34,211,238,0.2), rgba(167,139,250,0.2));
+      border: 1px solid rgba(148,163,184,0.2);
+      color: var(--text);
+      padding: 10px 14px; border-radius: 12px;
+      font-weight: 600; text-decoration: none;
+      transition: transform .06s ease-in-out, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); text-decoration: none; }
+
+    .pdf-wrap {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0b1020;
+    }
+    .pdf-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 12px; border-bottom: 1px solid var(--border);
+      color: var(--muted); font-size: 14px;
+    }
+    .pdf-frame {
+      width: 100%; height: min(75vh, 800px);
+      border: 0; display: block;
+    }
+
+    footer { margin-top: 40px; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title">Capstone Project</div>
+      <div class="subtitle"><strong>Predicting Customer Response to Gold Membership Offers</strong> · Bracha Stein</div>
+      <div class="chips">
+        <span class="chip">Machine Learning</span>
+        <span class="chip">Marketing Analytics</span>
+        <span class="chip">XGBoost</span>
+        <span class="chip">Model Explainability (SHAP)</span>
+      </div>
+      <p style="max-width: 900px; color: var(--text); margin-top: 10px;">
+        The goal of this project is to forecast which customers are most likely to accept a discounted Gold Membership campaign, helping retail marketers improve targeting,
+        increase conversions, and optimize return on investment.
+      </p>
+      <div class="btns">
+        <a class="btn" href="notebooks/EDA_Notebook.ipynb">📓 EDA Notebook</a>
+        <a class="btn" href="notebooks/Modeling_Notebook.ipynb">🤖 Modeling Notebook</a>
+        <a class="btn" href="Capstone_Presentation.pdf">🖥️ Presentation (PDF)</a>
+        <a class="btn" href="Final_Paper.pdf">📄 Research Paper (PDF)</a>
+        <a class="btn" href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener">🌐 GitHub Profile</a>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Embeds">
+      <article class="card">
+        <h2>Presentation (Scrollable Embed)</h2>
+        <p class="muted">Preview the slides inline. You can also open them in a new tab with the button above.</p>
+        <div class="pdf-wrap">
+          <div class="pdf-head">Capstone_Presentation.pdf <span>inline preview</span></div>
+          <!-- If your presentation is a .pptx, convert it to PDF and keep the filename below -->
+          <iframe class="pdf-frame" src="Capstone_Presentation.pdf#view=FitH"></iframe>
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Research Paper (Scrollable Embed)</h2>
+        <div class="pdf-wrap">
+          <div class="pdf-head">Final_Paper.pdf <span>inline preview</span></div>
+          <iframe class="pdf-frame" src="Final_Paper.pdf#page=1&view=FitH"></iframe>
+        </div>
+      </article>
+
+      <article class="card half">
+        <h2>Project Summary</h2>
+        <p>
+          Built and evaluated multiple predictive models (Logistic Regression, Random Forest, XGBoost) to identify likely responders.
+          Model interpretability via SHAP highlighted key drivers such as purchase recency, household composition, and spending on premium categories (wine, meat, gold products).
+          Findings inform targeted marketing to improve conversion and ROI.
+        </p>
+        <p><em>Technologies:</em> Python, pandas, scikit-learn, XGBoost, SHAP, matplotlib, Jupyter</p>
+      </article>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Bracha Stein · <a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" rel="noopener">View on GitHub</a>
+    </footer>
+  </div>
+  <script>
+    // Set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
