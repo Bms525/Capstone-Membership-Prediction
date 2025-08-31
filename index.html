@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capstone Project · Bracha Stein</title>
+  <meta name="description" content="Predicting Customer Response to Gold Membership Offers" />
+  <style>
+    :root {
+      --bg: #0f172a;         /* slate-900 */
+      --card: #111827;       /* gray-900 */
+      --muted: #94a3b8;      /* slate-400 */
+      --text: #e5e7eb;       /* gray-200 */
+      --accent: #22d3ee;     /* cyan-400 */
+      --accent-2: #a78bfa;   /* violet-400 */
+      --border: #1f2937;     /* gray-800 */
+      --chip: #0ea5e9;       /* sky-500 */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% -10%, #0b1220 0%, var(--bg) 40%), var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 16px 64px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 38px); letter-spacing: 0.2px; }
+    header p.tagline { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .chips { margin: 18px 0 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      border: 1px solid var(--border);
+      color: #cbd5e1; /* slate-300 */
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.08));
+      border-radius: 999px; padding: 6px 12px; font-size: 12px; letter-spacing: 0.3px;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card {
+      grid-column: span 12;
+      border: 1px solid var(--border);
+      background: rgba(17, 24, 39, 0.6);
+      border-radius: 18px; padding: 18px; box-shadow: 0 6px 30px rgba(0,0,0,0.25);
+    }
+
+    @media (min-width: 820px) {
+      .card.half { grid-column: span 6; }
+    }
+
+    .section-title { font-size: 18px; margin: 0 0 10px; color: #c7d2fe; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 600; font-size: 14px; letter-spacing: 0.2px;
+      padding: 10px 14px; border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(34,211,238,0.08), rgba(167,139,250,0.08));
+      color: var(--text);
+    }
+    .btn:hover { filter: brightness(1.06); text-decoration: none; }
+
+    .summary { color: #cbd5e1; line-height: 1.6; }
+    .summary strong { color: #e2e8f0; }
+
+    /* PDF Embed Box */
+    .pdf-wrapper { border: 1px solid var(--border); background: #0b1220; border-radius: 16px; padding: 8px; }
+    .pdf-box { width: 100%; height: 640px; border: none; border-radius: 12px; }
+    .pdf-note { margin-top: 8px; color: var(--muted); font-size: 13px; }
+
+    footer { margin-top: 24px; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Capstone Project</h1>
+      <p class="tagline">Predicting Customer Response to Gold Membership Offers · Bracha Stein</p>
+      <div class="chips">
+        <span class="chip">Machine Learning</span>
+        <span class="chip">Marketing Analytics</span>
+        <span class="chip">XGBoost</span>
+        <span class="chip">Model Explainability (SHAP)</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Notebooks (single links only) -->
+      <section class="card half">
+        <h2 class="section-title">📓 Notebooks</h2>
+        <div class="links">
+          <!-- Replace the nbviewer links with your real notebook locations -->
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://nbviewer.org/github/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb">EDA Notebook (Jupyter view)</a>
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://nbviewer.org/github/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb">Modeling Notebook (Jupyter view)</a>
+        </div>
+        <p class="pdf-note" style="margin-top:10px;">Tip: nbviewer renders .ipynb cleanly and avoids any downloads. Point these to your repo paths.</p>
+      </section>
+
+      <!-- Research Paper (link only) -->
+      <section class="card half">
+        <h2 class="section-title">📄 Research Paper</h2>
+        <p><a class="btn" target="_blank" rel="noopener noreferrer" href="Final_Paper.pdf">Open Research Paper (PDF)</a></p>
+        <p class="pdf-note">Leave this as a link so only the presentation is embedded below.</p>
+      </section>
+
+      <!-- Presentation embedded (scrollable box) -->
+      <section class="card" id="presentation">
+        <h2 class="section-title">🖥️ Presentation (embedded PDF)</h2>
+        <div class="pdf-wrapper">
+          <!--
+            Place your exported presentation PDF at: /Bracha_Stein_Capstone_Project_Powerpoint.pdf
+            Using a relative path ensures GitHub Pages serves the PDF with the correct content-type
+            so it displays in-page instead of downloading.
+          -->
+          <iframe
+            class="pdf-box"
+            src="Bracha_Stein_Capstone_Project_Powerpoint.pdf#view=FitH&toolbar=1&navpanes=0&page=1"
+            title="Presentation PDF"
+          ></iframe>
+        </div>
+        <p class="pdf-note">If the viewer doesn't appear, make sure the file exists at <code>Bracha_Stein_Capstone_Project_Powerpoint.pdf</code> in the same branch as this page (usually <code>main</code> or <code>gh-pages</code>).</p>
+        <p><a class="btn" target="_blank" rel="noopener noreferrer" href="Bracha_Stein_Capstone_Project_Powerpoint.pdf">Open Presentation in a new tab</a></p>
+      </section>
+
+      <!-- Project Summary -->
+      <section class="card">
+        <h2 class="section-title">Project Summary</h2>
+        <p class="summary">
+          Built and evaluated multiple predictive models (<strong>Logistic Regression</strong>, <strong>Random Forest</strong>, <strong>XGBoost</strong>) to identify likely responders. 
+          Model interpretability via <strong>SHAP</strong> highlighted key drivers such as purchase recency, household composition, and spending on premium categories (<em>wine</em>, <em>meat</em>, <em>gold products</em>). 
+          Findings inform targeted marketing to improve conversion and ROI.
+        </p>
+        <p class="summary"><strong>Technologies:</strong> Python, pandas, scikit-learn, XGBoost, SHAP, matplotlib, Jupyter</p>
+      </section>
+
+      <!-- Profile link -->
+      <section class="card">
+        <h2 class="section-title">🌐 GitHub Profile</h2>
+        <p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://github.com/Bms525">Visit My GitHub</a></p>
+      </section>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Bracha Stein · Hosted on GitHub Pages
+    </footer>
+  </div>
+  <script>
+    // Tiny progressive enhancement for the footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
