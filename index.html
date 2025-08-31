@@ -28,35 +28,18 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 32px 20px 80px;
-    }
-    header {
-      display: grid;
-      gap: 12px;
-      margin: 40px 0 28px;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+    header { display: grid; gap: 12px; margin: 40px 0 28px; }
     .title { font-size: clamp(28px, 5vw, 44px); font-weight: 800; letter-spacing: -0.02em; }
     .subtitle { font-size: clamp(16px, 2.5vw, 22px); color: var(--muted); }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .chip { background: rgba(34,211,238,0.12); border: 1px solid rgba(34,211,238,0.25); color: #cffafe; padding: 6px 10px; border-radius: 999px; font-size: 13px; }
 
     .grid { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); }
-    .card {
-      grid-column: span 12;
-      background: radial-gradient(1200px 300px at 20% -20%, rgba(167,139,250,0.15), transparent),
-                  radial-gradient(1200px 300px at 120% 120%, rgba(34,211,238,0.08), transparent),
-                  var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    }
-    @media (min-width: 880px) {
-      .card.half { grid-column: span 6; }
-    }
+    .card { grid-column: span 12; background: radial-gradient(1200px 300px at 20% -20%, rgba(167,139,250,0.15), transparent),
+                                   radial-gradient(1200px 300px at 120% 120%, rgba(34,211,238,0.08), transparent), var(--card);
+            border: 1px solid var(--border); border-radius: 18px; padding: 22px 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
+    @media (min-width: 880px) { .card.half { grid-column: span 6; } }
 
     h2 { font-size: 22px; margin: 0 0 10px; }
     p { margin: 10px 0; }
@@ -95,37 +78,39 @@
       <!-- NOTEBOOK BUTTONS -->
       <div class="btns">
         <!-- EDA -->
-        <a class="btn" href="https://github.com/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb" target="_blank" rel="noopener">📓 EDA (GitHub)</a>
-        <a class="btn" href="https://nbviewer.org/github/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb" target="_blank" rel="noopener">🖼️ EDA (nbviewer)</a>
-        <a class="btn" href="https://colab.research.google.com/github/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb" target="_blank" rel="noopener">⚡ EDA (Colab)</a>
+        <a class="btn" href="https://github.com/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb?v=6" target="_blank" rel="noopener noreferrer">📓 EDA (GitHub)</a>
+        <a class="btn" href="https://nbviewer.org/github/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb?v=6" target="_blank" rel="noopener noreferrer">🖼️ EDA (nbviewer)</a>
+        <a class="btn" href="https://colab.research.google.com/github/Bms525/Capstone-Membership-Prediction/blob/main/EDA_Notebook.ipynb?v=6" target="_blank" rel="noopener noreferrer">⚡ EDA (Colab)</a>
 
         <!-- Modeling -->
-        <a class="btn" href="https://github.com/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb" target="_blank" rel="noopener">🤖 Modeling (GitHub)</a>
-        <a class="btn" href="https://nbviewer.org/github/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb" target="_blank" rel="noopener">🖼️ Modeling (nbviewer)</a>
-        <a class="btn" href="https://colab.research.google.com/github/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb" target="_blank" rel="noopener">⚡ Modeling (Colab)</a>
+        <a class="btn" href="https://github.com/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb?v=6" target="_blank" rel="noopener noreferrer">🤖 Modeling (GitHub)</a>
+        <a class="btn" href="https://nbviewer.org/github/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb?v=6" target="_blank" rel="noopener noreferrer">🖼️ Modeling (nbviewer)</a>
+        <a class="btn" href="https://colab.research.google.com/github/Bms525/Capstone-Membership-Prediction/blob/main/Modeling_Notebook.ipynb?v=6" target="_blank" rel="noopener noreferrer">⚡ Modeling (Colab)</a>
 
-        <!-- PDFs -->
-        <a class="btn" href="https://raw.githubusercontent.com/Bms525/Capstone-Membership-Prediction/main/Bracha_Stein_Capstone_Project_Powerpoint.pdf" target="_blank" rel="noopener">🖥️ Presentation (PDF)</a>
-        <a class="btn" href="https://bms525.github.io/Capstone-Membership-Prediction/Final_Paper.pdf" target="_blank" rel="noopener">📄 Research Paper (PDF)</a>
+        <!-- PDFs via jsDelivr (inline-friendly) -->
+        <a class="btn" href="https://cdn.jsdelivr.net/gh/Bms525/Capstone-Membership-Prediction@main/Bracha_Stein_Capstone_Project_Powerpoint.pdf?v=6" target="_blank" rel="noopener noreferrer">🖥️ Presentation (PDF)</a>
+        <a class="btn" href="https://cdn.jsdelivr.net/gh/Bms525/Capstone-Membership-Prediction@main/Final_Paper.pdf?v=6" target="_blank" rel="noopener noreferrer">📄 Research Paper (PDF)</a>
 
-        <a class="btn" href="https://github.com/Bms525" target="_blank" rel="noopener">🌐 GitHub Profile</a>
+        <a class="btn" href="https://github.com/Bms525" target="_blank" rel="noopener noreferrer">🌐 GitHub Profile</a>
       </div>
     </header>
 
-    <section class="grid" aria-label="Embeds">
-      <article class="card">
+    <section class="grid" aria-label="Links">
+      <article class="card half">
         <h2>Presentation</h2>
-        <p>You can view the presentation here:</p>
-        <a class="btn" href="https://raw.githubusercontent.com/Bms525/Capstone-Membership-Prediction/main/Bracha_Stein_Capstone_Project_Powerpoint.pdf" target="_blank" rel="noopener">🖥️ Open Presentation (PDF)</a>
+        <p>Click to view the presentation in a new tab:</p>
+        <a class="btn" href="https://cdn.jsdelivr.net/gh/Bms525/Capstone-Membership-Prediction@main/Bracha_Stein_Capstone_Project_Powerpoint.pdf?v=6" target="_blank" rel="noopener noreferrer">🖥️ Open Presentation (PDF)</a>
       </article>
 
       <article class="card half">
         <h2>Research Paper</h2>
-        <p>You can view the research paper here:</p>
-        <a class="btn" href="https://bms525.github.io/Capstone-Membership-Prediction/Final_Paper.pdf" target="_blank" rel="noopener">📄 Open Research Paper (PDF)</a>
+        <p>Click to view the research paper in a new tab:</p>
+        <a class="btn" href="https://cdn.jsdelivr.net/gh/Bms525/Capstone-Membership-Prediction@main/Final_Paper.pdf?v=6" target="_blank" rel="noopener noreferrer">📄 Open Research Paper (PDF)</a>
       </article>
+    </section>
 
-      <article class="card half">
+    <section class="grid" aria-label="Summary">
+      <article class="card">
         <h2>Project Summary</h2>
         <p>
           Built and evaluated multiple predictive models (Logistic Regression, Random Forest, XGBoost) to identify likely responders.
@@ -138,7 +123,7 @@
 
     <footer>
       © <span id="y"></span> Bracha Stein · 
-      <a href="https://github.com/Bms525/Capstone-Membership-Prediction" target="_blank" rel="noopener">View on GitHub</a>
+      <a href="https://github.com/Bms525/Capstone-Membership-Prediction" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </footer>
   </div>
   <script>
